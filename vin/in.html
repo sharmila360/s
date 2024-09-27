@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM2A7z4jZqPAaHm0hgzRZCZsY5PoZt9NHPD5Ulg" crossorigin="anonymous">
+    
+    <title>Sharmi Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+                        scroll-behavior: smooth;
+
+        }
+        .social-icons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            color: #008B8B; /* Adjusted color for visibility */
+            margin: 0 15px;
+            font-size: 30px; /* Larger icon size */
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #00bcd4; /* Hover color */
+            transform: scale(1.2); /* Slight zoom effect on hover */
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .social-icons a {
+                font-size: 24px; /* Smaller icons for mobile */
+            }
+        }
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        header {
+    background-color: #008B8B;
+    color: #fff;
+    padding: 15px 0;
+    position: fixed; /* Make the header fixed */
+    top: 0; /* Stick it to the top */
+    left: 0; /* Stick it to the left */
+    width: 100%; /* Make sure it covers the full width */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+}
+
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        .navbar ul.show {
+    display: flex; /* Show when menu is active */
+  }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 17.6px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #00bcd4;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
+            transform: scale(1.1);
+        }
+
+
+
+        .menu-btn {
+  display: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none; /* Hide the full navbar */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar ul.show {
+    display: flex; /* Show when menu is active */
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  .menu-btn {
+    display: block; /* Show the hamburger menu on mobile */
+  }
+}
+
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px;
+            background-color: #333;
+            color: #fff;
+            height: 100vh;
+        }
+
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .left-content {
+            max-width: 50%;
+        }
+
+       
+        .left-content h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 4rem; /* change here */
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+.left-content h1 span {
+    color: var(--text-color);
+}
+
+
+        .profession {
+            font-size: 24px;
+            color: #00bcd4;
+            margin-bottom: 20px;
+        }
+
+        .welcome-note {
+            font-size: 19.2px;
+            line-height: 1.8;
+        }
+
+        .about-img {
+            width: 100%;
+            max-width: 250px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .right-content {
+            max-width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 400px;
+            border-radius: 50%;
+            border: 5px solid #00bcd4;
+            animation: floatImage 5s infinite;
+        }
+
+        @keyframes floatImage {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+.section {
+    padding: 80px 0; 
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 40px; 
+    margin-bottom: 40px; 
+    color: #333;
+}
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+
+section.about-section {
+    background-color: #f4f4f4;
+}
+
+section.about-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Raleway', sans-serif;
+}
+.about-img {
+    width: 100%; 
+    max-width: 250px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+
+section.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin: 10px 0;
+    font-family: 'Raleway', sans-serif;
+}
+        /* Skills Section */
+        .skills-section {
+            background-color: #f4f4f4;
+        }
+
+        .skills-bar-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .skills-bar {
+            background-color: #ddd;
+            border-radius: 25px;
+            overflow: hidden;
+            width: 70%; /* Decreased width */
+            margin-bottom: 20px;
+            position: relative;
+            height: 40px; /* Adjusted height */
+        }
+
+        .skills-bar span {
+            display: block;
+            height: 100%;
+            background-color: #00bcd4;
+            line-height: 40px;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            border-radius: 25px; /* Smooth edges */
+            animation: grow 2s ease-in-out;
+        }
+
+        @keyframes grow {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background-color: #f5f5f5;
+            padding: 60px 0;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .project-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 300px;
+            margin: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .project-card img{
+            width: 250px;
+        }
+
+        .project-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .project-card p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 17.6px;
+            font-weight: 700;
+        }
+        
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .btn {
+            background-color: #00bcd4;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0097a7;
+            transform: scale(1.05);
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        .section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        #contact{
+        text-align: left;
+    }
+        /* Media Queries for Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .left-content,
+            .right-content {
+                max-width: 100%;
+            }
+
+            .left-content h1 {
+                font-size: 48px;
+            }
+
+            .profession {
+                font-size: 22px;
+            }
+
+            .welcome-note {
+                font-size: 18px;
+            }
+
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .project-card {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 20px;
+            }
+
+            .left-content h1 {
+                display: flex;
+        flex-direction: column;
+    }
+
+            .profession {
+                font-size: 20px;
+            }
+
+            .welcome-note {
+                font-size: 16px;
+            }
+
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 40px 10px;
+            }
+
+            .left-content h1 {
+                font-size: 32px;
+            }
+
+            .profession {
+                font-size: 18px;
+            }
+
+            .welcome-note {
+                font-size: 14px;
+            }
+
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+        
+        
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Portfolio</div> 
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="menu-btn" id="menu-btn">
+                &#9776; <!-- Hamburger Menu Icon -->
+              </div>
+
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="left-content"><br><br>
+                <h1><span>Sharmila Devi</span></h1>
+                <p class="profession">Aspiring Web Developer</p>
+                <p class="welcome-note">Welcome to my portfolio website! I am passionate about web development and design, with a focus on creating responsive and user-friendly interfaces. Have a look at my projects and feel free to reach out for any collaboration!</p>
+                <section class="social-icons">
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" width="40"></a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="40"></a>
+                </section>
+            </div>
+            <div class="right-content">
+                <img src="sharmi1.jpg" alt="Profile Picture" class="profile-img">
+               
+              
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="section about-section">
+        <br><br><br>
+        <h2>About Me</h2>
+        <img src="sharmi1.jpg"  alt="About Me" class="about-img"> 
+        <p>Hi, I'm <strong>Sharmila Devi</strong>, a passionate Front-End Developer who loves crafting beautiful,responsive, and user-friendly websites.</p>
+        <p> I have a strong foundation in HTML, CSS, and JavaScript, with experience in using modern frameworks like React. My goal is to
+        <p>create seamless and engaging web experiences that meet the needs of users and clients.</p>
+        <p>I enjoy solving complex problems and am always eager to learn new technologies. When I'm not coding, you can find me </p>
+        <p>exploring design trends, reading tech blogs, or contributing to open-source projects.</p>
+        
+        <p>If you're looking for a developer who is dedicated, detail-oriented, and excited about web development, feel free to connect with me!</p>
+        <a href="resume.pdf" download="Sharmila_Devi_CV" class="btn">Download CV</a>   
+    </section>
+
+    <section id="skills" class="section skills-section">
+        <br><br><br>
+        <h2>Skills</h2>
+        <div class="skills-bar-container">
+            <div class="skills-bar">
+                <span style="width: 80%">HTML</span>
+            </div>
+            <div class="skills-bar">
+                <span style="width: 75%">CSS</span>
+            </div>
+            <div class="skills-bar">
+                <span style="width: 70%">JavaScript</span>
+            </div>
+            <div class="skills-bar">
+                <span style="width: 85%">GIT</span>
+            </div>
+            <div class="skills-bar">
+                <span style="width: 65%">Web Design</span>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="project" class="section projects-section">
+        <br><br><br>
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="pro1.PNG" alt="no img" srcset="">
+                <h3>Food Wastage Reduction Application</h3>
+                <p>Developed a web
+                    application using PHP as the backend and HTML, CSS and Javascript</p>
+            </div>
+            <div class="project-card">
+                <img src="pro2.png" alt="no img" srcset="">
+                <h3>Online Shopping Website  </h3>
+                <p>Created a Simple Shopping website. It demonstrates my proficiency in front-end development and design.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    
+
+    <section id="contact" class="section contact-section">
+        <br><br><br>
+        <h2>Contact</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn" id="sub" onclick="val()">Send Message</button>
+        </form>
+    </section>
+    <script>
+
+        // Toggle the navigation menu on mobile
+    document.getElementById('menu-btn').addEventListener('click', function() {
+      var navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('show');
+    });
+    document.getElementById('sub').addEventListener('click', function() {
+        alert("Your message has been sent")
+    })
+      </script>
+</body>
+</html>
